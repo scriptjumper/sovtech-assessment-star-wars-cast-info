@@ -7,6 +7,7 @@ import People from './components/People'
 import Details from './components/Details'
 import Header from './components/Header'
 import Page from './components/Page'
+import Search from './components/Search'
 
 const client = new ApolloClient({
   uri: 'https://fsgm7.sse.codesandbox.io/',
@@ -30,6 +31,7 @@ export const App: React.FC = () => {
             <Route exact path="/" render={() => <People data={usePeople} currentPage={1} numberOfPages={0} />} />
             <Route exact path="/person/:name/:index" component={Details} />
             <Route exact path="/page/:number" component={Page} />
+            <Route exact path="/search/:name" component={Search} />
           </div>
         </Router>
       </ApolloProvider>
