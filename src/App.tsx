@@ -1,5 +1,4 @@
 import React from 'react'
-import backGround from './bg-stars.jpeg'
 import { ApolloClient, InMemoryCache, ApolloProvider, useQuery } from '@apollo/client'
 import { PEOPLE_QUERY } from './components/Queries'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
@@ -21,7 +20,7 @@ export const App: React.FC = () => {
   }
 
   return (
-    <div className="text-gray-100 work-sans leading-normal text-base tracking-normal bg-cover " style={{ background: `url(${backGround}) repeat-y` }}>
+    <div className="text-gray-100 work-sans leading-normal text-base tracking-normal bg-cover">
       <ApolloProvider client={client}>
         <Router>
           <div>
