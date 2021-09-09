@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { PERSON_QUERY } from './Queries'
 import { useQuery } from '@apollo/client'
-import { useParams } from 'react-router-dom'
+import { useParams, useHistory } from 'react-router-dom'
 
 const Details: React.FC = () => {
   const { name }: { name: string; index: string } = useParams()
@@ -10,6 +10,9 @@ const Details: React.FC = () => {
   const { loading, error, data } = useQuery(PERSON_QUERY, {
     variables: { name }
   })
+
+  let history = useHistory()
+  const goToPrevPath = () => history.goBack()
 
   const [homeWorld, sethomeWorld] = useState('N/A')
 
@@ -39,6 +42,12 @@ const Details: React.FC = () => {
           <p className="pt-4 text-base font-bold flex items-center justify-center lg:justify-start">Mass: {person.mass}</p>
           <p className="pt-4 text-base font-bold flex items-center justify-center lg:justify-start">Gender: {person.gender}</p>
           <p className="pt-4 text-base font-bold flex items-center justify-center lg:justify-start">Home World: {homeWorld}</p>
+
+          <div className="pt-12 pb-8">
+            <button className="bg-yellow-400 hover:bg-yellow-500 text-gray-700  hover:text-gray-100 font-bold py-2 px-4 rounded-full" onClick={goToPrevPath}>
+              Back
+            </button>
+          </div>
         </div>
       </div>
 
