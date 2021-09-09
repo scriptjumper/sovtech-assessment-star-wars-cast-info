@@ -22,7 +22,7 @@ const Pagination: React.FC<Props> = (Props) => {
 
         <li className="mx-1 px-3 py-2 bg-yellow-400 rounded-lg">{Props.currentPage}</li>
 
-        {Props.currentPage === Props.numberOfPages ? (
+        {Props.currentPage === Props.numberOfPages || Props.numberOfPages === 0 ? (
           ''
         ) : (
           <li className="mx-1 px-3 py-2 bg-yellow-400 hover:bg-yellow-500 rounded-lg hover:text-gray-100">

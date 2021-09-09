@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import { Formik, Form, Field } from 'formik'
-import { useHistory } from 'react-router-dom'
+import { useHistory, Link } from 'react-router-dom'
 
 interface MyFormValues {
   search: string
@@ -22,7 +22,9 @@ const Header: React.FC = () => {
 
       <div className="w-screen flex flex-row items-center p-1 justify-between bg-gray-400 shadow-xs">
         <div className="ml-8 text-lg text-gray-100 hidden md:flex">
-          People<span className="text-yellow-400">@</span>Star Wars
+          <Link className="flex items-center font-bold " to="/">
+            People<span className="text-yellow-400">@</span>Star Wars
+          </Link>
         </div>
 
         <Formik
