@@ -14,7 +14,7 @@ const Search: React.FC = () => {
     return { loading, error, data }
   }
 
-  return <People data={usePeople} currentPage={1} numberOfPages={0} />
+  return <People data={usePeople} currentPage={1} />
 }
 
 export default Search

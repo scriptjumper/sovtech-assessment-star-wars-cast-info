@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import People from './People'
 import { useQuery } from '@apollo/client'
 import { PAGE_QUERY } from './Queries'
@@ -16,9 +16,7 @@ const Page: React.FC = () => {
     return { loading, error, data }
   }
 
-  const [numberOfPages, setnumberOfPages] = useState(9)
-
-  return <People data={usePeople} currentPage={peoplePage} numberOfPages={numberOfPages} />
+  return <People data={usePeople} currentPage={peoplePage} />
 }
 
 export default Page

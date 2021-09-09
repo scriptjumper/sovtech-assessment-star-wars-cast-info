@@ -6,7 +6,6 @@ import Pagination from './Pagination'
 interface Props {
   data: CallableFunction
   currentPage: number
-  numberOfPages: number
 }
 
 const People: React.FC<Props> = (Props) => {
@@ -33,7 +32,7 @@ const People: React.FC<Props> = (Props) => {
         {people.map(({ name }: { name: string }, index: number): string => (<Person key={index} name={name} index={index} />) as any)}
       </div>
 
-      <Pagination currentPage={Props.currentPage} numberOfPages={Props.numberOfPages} />
+      <Pagination currentPage={Props.currentPage} />
     </section>
   )
 }

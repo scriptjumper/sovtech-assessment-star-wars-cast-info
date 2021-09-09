@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom'
 
 interface Props {
   currentPage: number
-  numberOfPages: number
 }
+
+let numberOfPages: number = 9
 
 const Pagination: React.FC<Props> = (Props) => {
   return (
@@ -22,7 +23,7 @@ const Pagination: React.FC<Props> = (Props) => {
 
         <li className="mx-1 px-3 py-2 bg-yellow-400 rounded-lg">{Props.currentPage}</li>
 
-        {Props.currentPage === Props.numberOfPages || Props.numberOfPages === 0 ? (
+        {Props.currentPage === numberOfPages ? (
           ''
         ) : (
           <li className="mx-1 px-3 py-2 bg-yellow-400 hover:bg-yellow-500 rounded-lg hover:text-gray-100">
