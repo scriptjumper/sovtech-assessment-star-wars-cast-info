@@ -3,6 +3,8 @@ import axios from 'axios'
 import { PERSON_QUERY } from './Queries'
 import { useQuery } from '@apollo/client'
 import { useParams, useHistory } from 'react-router-dom'
+import Loading from './Loading'
+import Error from './Error'
 
 const Details: React.FC = () => {
   const { name }: { name: string; index: string } = useParams()
@@ -16,8 +18,8 @@ const Details: React.FC = () => {
 
   const [homeWorld, sethomeWorld] = useState('N/A')
 
-  if (loading) return <p>Loading component</p>
-  if (error) return <p>Error component</p>
+  if (loading) return <Loading />
+  if (error) return <Error />
 
   const imageURL: string = 'https://via.placeholder.com/400x550'
   const person = data.person[0]
