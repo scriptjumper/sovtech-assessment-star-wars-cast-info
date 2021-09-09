@@ -27,7 +27,7 @@ export const App: React.FC = () => {
             <section>
               <Header />
             </section>
-            <Route exact path="/" render={() => <People data={usePeople} currentPage={1} />} />
+            <Route exact path="/" render={() => <People data={usePeople} currentPage={1} numberOfPages={0} />} />
             <Route exact path="/person/:name/:index" component={Details} />
             <Route exact path="/page/:number" component={Page} />
           </div>
