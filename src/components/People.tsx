@@ -1,6 +1,7 @@
 import React from 'react'
 import { ApolloError } from '@apollo/client'
 import Person from './Person'
+import Pagination from './Pagination'
 
 interface Props {
   data: CallableFunction
@@ -30,6 +31,8 @@ const People: React.FC<Props> = (Props) => {
       <div className="container mx-auto flex items-center flex-wrap pt-4 pb-12 ">
         {people.map(({ name }: { name: string }, index: number): string => (<Person name={name} index={index} />) as any)}
       </div>
+
+      <Pagination currentPage={Props.currentPage} />
     </section>
   )
 }
